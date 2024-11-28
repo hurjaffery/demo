@@ -12,8 +12,6 @@ pipeline {
                 echo 'Building Project'
                 // Using environment variable
                 echo "Building version ${NEW_VERSION}"
-                // Install Node.js using NVM
-                sh "nvm install"
             }
         }
         stage('Test') {
