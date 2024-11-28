@@ -1,9 +1,7 @@
 boolean flag = true
 pipeline {
     agent any
-    tools {
-        maven 'Maven' // Define Maven as the tool to use
-    }
+
     environment {
         // Variables defined here can be used by any stage
         NEW_VERSION = '1.3.0'
