@@ -1,10 +1,14 @@
 boolean flag = true
 pipeline {
     agent any
+    environment {
+        NEW_VERSION = '1.3.0'
+    }
     stages {
         stage('Build') {
             steps {
                 echo 'Building Project'
+                echo 'Building Version  $(NEW_VERSION)'
                 // Here you can define commands for your build
             }
         }
