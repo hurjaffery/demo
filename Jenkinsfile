@@ -1,15 +1,21 @@
 boolean flag = true
 pipeline {
     agent any
+    tools {
+        maven 'Maven' // Define Maven as the tool to use
+    }
     environment {
+        // Variables defined here can be used by any stage
         NEW_VERSION = '1.3.0'
     }
     stages {
         stage('Build') {
             steps {
                 echo 'Building Project'
-                echo 'Building Version  $(NEW_VERSION)'
-                // Here you can define commands for your build
+                // Using environment variable
+                echo "Building version ${NEW_VERSION}"
+                // Install Node.js using NVM
+                sh "nvm install"
             }
         }
         stage('Test') {
